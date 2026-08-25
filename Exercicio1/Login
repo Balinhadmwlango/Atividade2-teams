@@ -1,0 +1,17 @@
+public class Login {
+    private int senha;
+    private int r;
+
+    public Login(int r){
+        this.r = r;
+        this.senha = 1234;
+    }
+
+    public void verificarSenha() {
+        if (this.r == this.senha){
+            IO.println("Acesso permitido");
+        }else{
+            IO.println("Acesso negado");
+        }
+    }
+}
