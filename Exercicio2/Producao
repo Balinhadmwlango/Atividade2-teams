@@ -1,0 +1,32 @@
+public class Producao {
+    private String TPP;
+    private int QtdM;
+    private String TIl;
+    private int PB;
+
+    public Producao(String TPP, int QtdM, String TIl) {
+        this.TPP = TPP;
+        this.QtdM = QtdM;
+        this.TIl = TIl;
+        this.PB = 0;
+    }
+
+    public void exibirVitrine() {
+        System.out.println("Na vitrine da loja, a peça em destaque é: "+this.TPP+", a quantidade de manequins é: "+this.QtdM+", e o tipo de iluminação é: "+this.TIl);
+    }
+
+    public void calcularPotencial() {
+        int potencialBase = 20;
+        this.PB= potencialBase + (this.QtdM * 15);
+        System.out.println("O potencial de vendas da loja é estimado em: "+this.PB+ " peças");
+    }
+
+    public void ativarModoNoturno() {
+        if (!this.TIl.equals("Luz quente")) {
+            this.TIl = "Luz quente";
+            System.out.println("Iluminação ajustada para o modo noturno: "+this.TIl+" ativada!");
+        } else {
+            System.out.println("A iluminação já está no modo noturno");
+        }
+    }
+}
