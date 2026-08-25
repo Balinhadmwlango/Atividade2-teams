@@ -1,0 +1,67 @@
+public class Temperatura {
+    private double Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez,Med;
+    private int r;
+
+    public Temperatura(int r){
+        this.r = r;
+        this.Jan = 24.5;
+        this.Fev = 25;
+        this.Mar = 23.5;
+        this.Abr = 21;
+        this.Mai = 19;
+        this.Jun = 18.5;
+        this.Jul = 18.5;
+        this.Ago = 20;
+        this.Set = 21.5;
+        this.Out = 22.5;
+        this.Nov = 23.5;
+        this.Dez = 24;
+        this.Med = (this.Jan+this.Fev+this.Mar+this.Abr+this.Mai+this.Jun+this.Jul+this.Ago+this.Set+this.Out+this.Nov+this.Dez)/12;
+    }
+
+    public void verificarTemperatura(){
+        if(this.r==1){
+            IO.println("A temperatura de janeiro é: "+this.Jan);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==2){
+            IO.println("A temperatura de fevereiro é: "+this.Fev);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==3){
+            IO.println("A temperatura de março é: "+this.Mar);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==4){
+            IO.println("A temperatura de abril é: "+this.Abr);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==5){
+            IO.println("A temperatura de maio é: "+this.Mai);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==6){
+            IO.println("A temperatura de junho é: "+this.Jun);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==7){
+            IO.println("A temperatura de julho é: "+this.Jul);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==8){
+            IO.println("A temperatura de agosto é: "+this.Ago);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==9){
+            IO.println("A temperatura de setembro é: "+this.Set);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==10){
+            IO.println("A temperatura de outubro é: "+this.Out);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==11){
+            IO.println("A temperatura de novembro é: "+this.Nov);
+            IO.println("A temperatura é agradável");
+        }else if(this.r==12){
+            IO.println("A temperatura de dezembro é: "+this.Dez);
+            IO.println("A temperatura é agradável");
+        }
+
+        if(this.Med<18){
+            System.out.printf("São José dos Campos faz frio, pois sua média é: %.2f",this.Med);
+        }else{
+            System.out.printf("São José dos Campos tem a temperatura agradável, pois sua média é: %.2f",this.Med);
+        }
+    }
+}
