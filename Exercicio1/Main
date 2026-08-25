@@ -1,0 +1,160 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        IO.println("Qual você deseja executar? ");
+        IO.println("1-Verificação de múltiplo");
+        IO.println("2-Sistema de Login Simplificado");
+        IO.println("3-Compra com desconto");
+        IO.println("4-Temperatura");
+        IO.println("5-Os trinta e cinco camelos");
+        IO.println("6-Calculadora de viagem");
+        IO.println("7-Aluguel de carro");
+        int op = entrada.nextInt();
+
+        switch(op){
+            case 1:
+                IO.println("\n ==============================================================: ");
+                IO.println("Digite um número: ");
+                int r = entrada.nextInt();
+
+                IO.println("Digite outro número: ");
+                int r1 = entrada.nextInt();
+
+                Multiplo m1 = new Multiplo(r, r1);
+                m1.verificarMultiplo();
+                break;
+
+            case 2:
+                IO.println("\n ==============================================================: ");
+                IO.println("Digite a senha: ");
+                int r3 = entrada.nextInt();
+
+                Login l1 = new Login(r3);
+                l1.verificarSenha();
+                break;
+
+            case 3:
+                IO.println("\n ==============================================================: ");
+                IO.println("Quantos pacotes de 1.5kg de arroz você pegou?");
+                int r4=entrada.nextInt();
+                IO.println("Qual o preço do pacote de 1kg?");
+                float par=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de feijão você pegou?");
+                int r5=entrada.nextInt();
+                entrada.nextLine();
+                IO.println("Você pegou o feijão carioca ou preto?");
+                String es=entrada.nextLine();
+                IO.println("Você pegou o pacote de 1kg ou 2kg?");
+                int q1=entrada.nextInt();
+                IO.println("Qual o preço do pacote de feijão "+es+" de "+q1+"kg?");
+                float pfe=entrada.nextFloat();
+
+                IO.println("\n Quantos óleos de soja de 900ml você pegou?");
+                int r6=entrada.nextInt();
+                IO.println("Qual é o preço de cada óleo de 900ml?");
+                float pol=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de 1kg de açúcar você pegou?");
+                int r7=entrada.nextInt();
+                entrada.nextLine();
+                IO.println("Você pegou o açúcar refinado ou cristal?");
+                String es1=entrada.nextLine();
+                IO.println("Qual o preço de cada pacote de 1kg de açúcar "+es1+"?");
+                float pac=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de café você pegou?");
+                int r8=entrada.nextInt();
+                IO.println("Você pegou o café de 250g ou de 500g?");
+                int q2=entrada.nextInt();
+                IO.println("Qual o preço do pacote de 500g de café?");
+                float pca=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de 500g de macarrão você pegou?");
+                int r9=entrada.nextInt();
+                entrada.nextLine();
+                IO.println("Você pegou o macarrão espaguete ou parafuso?");
+                String es2=entrada.nextLine();
+                IO.println("Qual o preço de cada pacote de 500g de macarrão "+es2+"?");
+                float pma=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de farinha de mandioca ou de trigo tu pegou?");
+                int r10=entrada.nextInt();
+                entrada.nextLine();
+                IO.println("Você pegou a farinha de mandioca ou de trigo?");
+                String es3=entrada.nextLine();
+                IO.println("Você pegou o pacote de 500g ou de 1kg?");
+                int q3=entrada.nextInt();
+                IO.println("Qual o preço do pacote de 1kg de farinha de "+es3+"?");
+                float pfa=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de 500g de fubá de milho você pegou?");
+                int r11=entrada.nextInt();
+                IO.println("Qual o preço do pacote de 500g de fubá?");
+                float pfu=entrada.nextFloat();
+
+                IO.println("\n Quantas embalagens de 300g molho ou extrato de tomate você pegou?");
+                int r12=entrada.nextInt();
+                entrada.nextLine();
+                IO.println("Você pegou molho ou extrato de tomate?");
+                String es4=entrada.nextLine();
+                IO.println("Qual o preço de cada embalagem de 300g de "+es4+"?");
+                float pmo=entrada.nextFloat();
+
+                IO.println("\n Quantos pacotes de 1kg de sal refinado você pegou?");
+                int r13=entrada.nextInt();
+                IO.println("Qual o preço de cada pacote de 1kg de sal?");
+                float psa=entrada.nextFloat();
+
+                Compra co1 = new Compra(r4,par,r5,es,q1,pfe,r6,pol,r7,es1,pac,r8,q2,pca,r9,es2,pma,r10,es3,q3,pfa,r11,pfu,r12,es4,pmo,r13,psa);
+                co1.verificarCompra();
+                break;
+
+            case 4:
+                IO.println("\n ==============================================================: ");
+                IO.println("Escreva o número de acordo com o mês que você queira ver (ex: 1-janeiro, 2-fevereiro):");
+                int r14 = entrada.nextInt();
+
+                Temperatura t1 = new Temperatura(r14);
+                t1.verificarTemperatura();
+                break;
+
+            case 5:
+                IO.println("\n ==============================================================: ");
+                IO.println("Quantos camelos existem no total?");
+                int r15= entrada.nextInt();
+
+                Camelos c1 = new Camelos(r15);
+                c1.verificarCamelos();
+                break;
+
+            case 6:
+                IO.println("\n ==============================================================: ");
+                IO.println("Quantos km terá a viagem?");
+                float r16 = entrada.nextFloat();
+                IO.println("\n Qual o preço do combustível?");
+                float r17= entrada.nextFloat();
+
+                Combustivel c2 = new Combustivel(r16,r17);
+                c2.verificarCombustivel();
+                break;
+
+            case 7:
+                IO.println("\n ==============================================================: ");
+                IO.println("Quantos dias você ficou com o carro??");
+                int r18 = entrada.nextInt();
+                IO.println("\n Quantos km você percorreu?");
+                float r19 = entrada.nextFloat();
+
+                Aluguel a1 = new Aluguel(r18, r19);
+                a1.verificarAluguel();
+                break;
+        }
+
+
+        entrada.close();
+    }
+}
