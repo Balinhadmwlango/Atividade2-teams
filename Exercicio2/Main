@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        IO.println("Qual você deseja executar? ");
+        IO.println("1-Verificar produção");
+        IO.println("2-Verificar trilha");
+        IO.println("3-Verificar artes");
+        int op = entrada.nextInt();
+
+        switch (op) {
+            case 1:
+                IO.println("\n =============================================================== ");
+                entrada.nextLine();
+                IO.println("Quais são as peças principais da vitrine? ");
+                String PP = entrada.nextLine();
+                IO.println("Quantos manequins tem na vitrine? ");
+                int Man = entrada.nextInt();
+                entrada.nextLine();
+                IO.println("Qual é o tipo de luz da vitrine?");
+                String Luz = entrada.nextLine();
+
+
+                IO.println("\n =============================================================== ");
+                Producao minhaVitrine = new Producao(PP,Man,Luz);
+                minhaVitrine.exibirVitrine();
+                minhaVitrine.calcularPotencial();
+                minhaVitrine.ativarModoNoturno();
+
+            case 2:
+                IO.println("\n =============================================================== ");
+                entrada.nextLine();
+                IO.println("Qual é o tipo de terra da trilha? ");
+                String TipoT= entrada.nextLine();
+                IO.println("Qual é a densidade da vegetação da trilha? ");
+                String densi = entrada.nextLine();
+                IO.println("Qual é a quantidade de ciclistas presentes na trilha?");
+                int Cic = entrada.nextInt();
+
+                IO.println("\n =============================================================== ");
+                Esporte trilhaAtual = new Esporte(TipoT,densi,Cic);
+                trilhaAtual.exibirCondicoes();
+                trilhaAtual.calcularDificuldade();
+                trilhaAtual.registrarChegada();
+
+            case 3:
+                IO.println("\n =============================================================== ");
+                entrada.nextLine();
+                IO.println("Qual é o título da sua obra? ");
+                String Titulo = entrada.nextLine();
+                IO.println("Quais materiais foram usados na obra? ");
+                String Mat = entrada.nextLine();
+                IO.println("Qual é o país de origem da obra? ");
+                String Pais = entrada.nextLine();
+
+                IO.println("\n =============================================================== ");
+                Artes novaObra = new Artes(Titulo,Mat,Pais);
+                novaObra.exibirArte();
+                novaObra.Exposicao();
+                novaObra.Preco();
+        }
+    }
+}
