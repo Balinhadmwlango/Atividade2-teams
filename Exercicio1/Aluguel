@@ -1,0 +1,26 @@
+public class Aluguel {
+    private int dias;
+    private float km,diaria,limite,pex,extra,r,r2;
+
+    public Aluguel(int dias, float km){
+        this.dias = dias;
+        this.km = km;
+        this.diaria = 5;
+        this.limite = 10;
+        this.pex = 7;
+        this.extra = 0;
+        this.r = 0;
+        this.r2 = 0;
+    }
+
+    public void verificarAluguel(){
+        this.r=this.dias*this.diaria;
+        if(this.km>this.limite){
+            this.extra=(this.km-this.limite)*this.pex;
+            this.r2=this.r+this.extra;
+            System.out.printf("\n O total do aluguel do carro custará: R$ %.2f",this.r2);
+        }else{
+            System.out.printf("\n O total do aluguel do carro custará R$ %.2f ",this.r);
+        }
+    }
+}
