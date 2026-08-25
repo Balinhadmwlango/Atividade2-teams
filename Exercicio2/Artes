@@ -1,0 +1,42 @@
+public class Artes {
+    private String Nome;
+    private String Material;
+    private String PaisOrigem;
+    private String MaterialProibido;
+    private double Preco;
+
+    public Artes(String Nome, String Material, String PaisOrigem){
+        this.Nome = Nome;
+        this.Material = Material;
+        this.PaisOrigem = PaisOrigem;
+        this.MaterialProibido = "Tinta base solvente";
+        this.Preco = 1000;
+    }
+
+    public void exibirArte(){
+        System.out.println("O título da obra é: "+this.Nome+", o material utilizado foi: "+this.Material+", e o pais de origem da arte é: " +this.PaisOrigem);
+    }
+
+    public void Exposicao(){
+        if(this.Material.equalsIgnoreCase(this.MaterialProibido)){
+            System.out.println("Alerta!! A obra "+this.Nome+" não pode ser exposta por conter "+this.MaterialProibido);
+        }else{
+            System.out.println("A obra "+this.Nome+" está aprovada para exibição!");
+        }
+    }
+
+    public void Preco(){
+        if (this.Material.equalsIgnoreCase("Tinta a óleo")){
+            this.Preco = this.Preco*15;
+        }else if (this.Material.equalsIgnoreCase("Tinta acrílica")){
+            this.Preco = this.Preco*12;
+        }else if (this.Material.equalsIgnoreCase("Tinta natural")){
+            this.Preco = this.Preco*10;
+        }else if (this.Material.equalsIgnoreCase("Tinta guache")){
+            this.Preco = this.Preco*7;
+        }else{
+            this.Preco = this.Preco*5;
+        }
+        System.out.println("A sua obra está estimada em R$ "+this.Preco);
+    }
+}
