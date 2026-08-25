@@ -1,0 +1,24 @@
+public class Combustivel {
+    private float km,L,Pcom,Tpcom,Des;
+
+    public Combustivel(float km, float Pcom){
+        this.km = km;
+        this.Pcom = Pcom;
+        this.L = 0;
+        this.Tpcom = 0;
+        this.Des = 0;
+    }
+
+    public void verificarCombustivel(){
+        this.L=this.km/12;
+        if(this.km<500){
+            this.Tpcom=this.L*this.Pcom;
+            System.out.printf("\n Você irá pagar R$ %.2f em combustível",this.Tpcom);
+        }else{
+            this.Des=(this.Pcom/10)/2;
+            this.Tpcom=this.L*(this.Pcom-this.Des);
+            System.out.printf("\n Você irá pagar R$ %.2f em combustível",this.Tpcom);
+        }
+
+    }
+}
