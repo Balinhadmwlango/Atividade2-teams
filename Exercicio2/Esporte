@@ -1,0 +1,37 @@
+public class Esporte {
+    private String TT;
+    private String DenV;
+    private int QtdC;
+    private int difB;
+
+    public Esporte(String TT, String DenV, int QtdC) {
+        this.TT = TT;
+        this.DenV = DenV;
+        this.QtdC = QtdC;
+        this.difB = 4;
+    }
+
+    public void exibirCondicoes() {
+        System.out.println("Na trilha, o tipo de terra é: "+this.TT+", a vegetação é: "+this.DenV+", e a quantidade de ciclistas presentes é: " +this.QtdC);
+    }
+    public void calcularDificuldade() {
+        if (this.TT.equalsIgnoreCase("Terra batida")) {
+            this.difB += 1;
+        } else {
+            this.difB += 3;
+        }
+        if (this.DenV.equalsIgnoreCase("Densa")) {
+            this.difB += 2;
+        }
+        if(this.difB>=10) {
+            System.out.println("O nível de dificuldade da trilha entre 1-10, é estimado em: 10");
+        }else{
+            System.out.println("O nível de dificuldade da trilha entre 1-10, é estimado em: " +this.difB);
+        }
+    }
+
+    public void registrarChegada() {
+        this.QtdC++;
+        System.out.println("Novo ciclista entrou na trilha, e agora a quantidade total atual é: "+this.QtdC);
+    }
+}
