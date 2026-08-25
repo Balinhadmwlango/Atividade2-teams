@@ -1,0 +1,28 @@
+public class Camelos {
+    private int qtdtotal,r1,r2,r3;
+    private float qtd1,qtd2,qtd3;
+
+    public Camelos(int qtdtotal){
+        this.qtdtotal = qtdtotal;
+        this.qtd1 = 0;
+        this.qtd2 = 0;
+        this.qtd3 = 0;
+        this.r1 = 0;
+        this.r2 = 0;
+        this.r3 = 0;
+    }
+
+    public void verificarCamelos(){
+        this.qtd1=this.qtdtotal/2;
+        this.r1 = Math.round(this.qtd1);
+        IO.println("O irmão mais velho receberá: "+this.r1+" camelos");
+
+        this.qtd2=this.qtdtotal/3;
+        this.r2 = Math.round(this.qtd2);
+        IO.println("O irmão do meio receberá: "+this.r2+" camelos");
+
+        this.qtd3=this.qtdtotal/9;
+        this.r3= Math.round(this.qtd3);
+        IO.println("O irmão mais novo receberá: "+this.r3+" camelos");
+    }
+}
