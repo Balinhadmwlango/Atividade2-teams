@@ -1,0 +1,158 @@
+public class Compra {
+    private int qtdar,qtdfe,qtdol,qtdac,qtdca,qtdma,qtdfa,qtdfu,qtdmo,qtdsa;
+    private int q1,q2,q3;
+    private float par,pfe,pol,pac,pca,pma,pfa,pfu,pmo,psa;
+    private float n,n1, soma;
+    private float sar,sfe,sol,sac,sca,sma,sfa,sfu,smo,ssa;
+    private String r1,r2,r3,r4,r5;
+
+    public Compra(int qtdar, float par, int qtdfe, String r1, int q1, float pfe, int qtdol, float pol, int qtdac, String r2, float pac, int qtdca, int q2, float pca, int qtdma, String r3, float pma, int qtdfa, String r4, int q3, float pfa, int qtdfu, float pfu, int qtdmo, String r5, float pmo, int qtdsa, float psa){
+        this.qtdar = qtdar;
+        this.qtdfe = qtdfe;
+        this.qtdol = qtdol;
+        this.qtdac = qtdac;
+        this.qtdca = qtdca;
+        this.qtdma = qtdma;
+        this.qtdfa = qtdfa;
+        this.qtdfu = qtdfu;
+        this.qtdmo = qtdmo;
+        this.qtdsa = qtdsa;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.q3 = q3;
+        this.par = par;
+        this.pfe = pfe;
+        this.pol = pol;
+        this.pac = pac;
+        this.pca = pca;
+        this.pma = pma;
+        this.pfa = pfa;
+        this.pfu = pfu;
+        this.pmo = pmo;
+        this.psa = psa;
+        this.n = 0;
+        this.n1 = 0;
+        this.soma = 0;
+        this.sar = 0;
+        this.sfe = 0;
+        this.sol = 0;
+        this.sac = 0;
+        this.sca = 0;
+        this.sma = 0;
+        this.sfa = 0;
+        this.sfu = 0;
+        this.smo = 0;
+        this.ssa = 0;
+        this.r1 = r1;
+        this.r2 = r2;
+        this.r3 = r3;
+        this.r4 = r4;
+        this.r5 = r5;
+    }
+
+    public void verificarCompra() {
+        this.n=this.par/2;
+        this.par=this.par+this.n;
+        this.sar=this.par*this.qtdar;
+        this.sfe=this.pfe*this.qtdfe;
+        this.sol=this.pol*this.qtdol;
+        this.sac=this.pac*this.qtdac;
+        if(this.q2==250){
+            this.n=this.pca/2;
+            this.pca=this.pca+this.n;
+            this.sca=this.pca*this.qtdca;
+        }else{
+            this.sca=this.pca*this.qtdca;
+        }
+        this.sma=this.pma*this.qtdma;
+        if(this.q3==500){
+            this.n=this.pfa/2;
+            this.pfa=this.pfa+this.n;
+            this.sfa=this.pfa*this.qtdfa;
+        }else{
+            this.sfa=this.pfa*this.qtdfa;
+        }
+        this.sfu=this.pfu*this.qtdfu;
+        this.smo=this.pmo*this.qtdmo;
+        this.ssa=this.psa*this.qtdsa;
+        this.soma=this.sar+this.sfe+this.sol+this.sac+this.sca+this.sma+this.sfa+this.sfu+this.smo+this.ssa;
+
+        if(this.soma>100){
+            this.n1=this.soma/10;
+            this.n1=this.soma-this.n1;
+
+            IO.println("==========================================================================");
+            IO.println("LISTA DE COMPRA FINAL");
+            IO.println("==========================================================================");
+
+            IO.println(this.qtdar+"\n pacotes de arroz de 1.5kg");
+            System.out.printf("%.2f, cada pacote de arroz, %.2f ao todo",this.par,this.sar);
+
+            IO.println(this.qtdfe+"\n pacotes de feijão "+this.r1+" de "+this.q1+"kg");
+            System.out.printf("%.2f, cada pacote de feijão, %.2f ao todo",this.pfe,this.sfe);
+
+            IO.println(this.qtdol+"\n pacotes de óleo de soja de 900ml");
+            System.out.printf("%.2f, cada pacote de óleo, %.2f ao todo",this.pol,this.sol);
+
+            IO.println(this.qtdac+"\n pacotes de açúcar "+this.r2+" de 1kg");
+            System.out.printf("%.2f, cada pacote de açúcar, %.2f ao todo",this.pac,this.sac);
+
+            IO.println(this.qtdca+"\n pacotes de café de "+this.q2+"g");
+            System.out.printf("%.2f, cada pacote de café, %.2f ao todo",this.pca,this.sca);
+
+            IO.println(this.qtdma+"\n pacotes de macarrão "+this.r3+" de 500g");
+            System.out.printf("%.2f, cada pacote de macarrão, %.2f ao todo",this.pma,this.sma);
+
+            IO.println(this.qtdfa+"\n pacotes de farinha de "+this.r4+" de 500g");
+            System.out.printf("%.2f, cada pacote de farinha, %.2f ao todo",this.pfa,this.sfa);
+
+            IO.println(this.qtdfu+"\n pacotes de fubá de milho de 500g");
+            System.out.printf("%.2f, cada pacote de fubá, %.2f ao todo",this.pfu,this.sfu);
+
+            IO.println(this.qtdmo+"\n pacotes de "+this.r5+" de 300g");
+            System.out.printf("%.2f, cada pacote, %.2f ao todo",this.pmo,this.smo);
+
+            IO.println(this.qtdsa+"\n pacotes de sal refinado de 1kg");
+            System.out.printf("%.2f, cada pacote de sal, %.2f ao todo",this.psa,this.ssa);
+
+            System.out.printf("\n Total da compra: %.2f", this.soma);
+            System.out.printf("\n Total da compra com desconto: %.2f",this.n1);
+        }else{
+            IO.println("==========================================================================");
+            IO.println("LISTA DE COMPRA FINAL");
+            IO.println("==========================================================================");
+
+            IO.println(this.qtdar+"\n pacotes de arroz de 1.5kg");
+            System.out.printf("%.2f, cada pacote de arroz, %.2f ao todo",this.par,this.sar);
+
+            IO.println(this.qtdfe+"\n pacotes de feijão "+this.r1+" de "+this.q1+"kg");
+            System.out.printf("%.2f, cada pacote de feijão, %.2f ao todo",this.pfe,this.sfe);
+
+            IO.println(this.qtdol+"\n pacotes de óleo de soja de 900ml");
+            System.out.printf("%.2f, cada pacote de óleo, %.2f ao todo",this.pol,this.sol);
+
+            IO.println(this.qtdac+"\n pacotes de açúcar "+this.r2+" de 1kg");
+            System.out.printf("%.2f, cada pacote de açúcar, %.2f ao todo",this.pac,this.sac);
+
+            IO.println(this.qtdca+"\n pacotes de café de "+this.q2+"g");
+            System.out.printf("%.2f, cada pacote de café, %.2f ao todo",this.pca,this.sca);
+
+            IO.println(this.qtdma+"\n pacotes de macarrão "+this.r3+" de 500g");
+            System.out.printf("%.2f, cada pacote de macarrão, %.2f ao todo",this.pma,this.sma);
+
+            IO.println(this.qtdfa+"\n pacotes de farinha de "+this.r4+" de 500g");
+            System.out.printf("%.2f, cada pacote de farinha, %.2f ao todo",this.pfa,this.sfa);
+
+            IO.println(this.qtdfu+"\n pacotes de fubá de milho de 500g");
+            System.out.printf("%.2f, cada pacote de fubá, %.2f ao todo",this.pfu,this.sfu);
+
+            IO.println(this.qtdmo+"\n pacotes de "+this.r5+" de 300g");
+            System.out.printf("%.2f, cada pacote, %.2f ao todo",this.pmo,this.smo);
+
+            IO.println(this.qtdsa+"\n pacotes de sal refinado de 1kg");
+            System.out.printf("%.2f, cada pacote de sal, %.2f ao todo",this.psa,this.ssa);
+
+            System.out.printf("\n Total da compra: %.2f", this.soma);
+        }
+    }
+}
